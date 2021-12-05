@@ -2,7 +2,7 @@ from dialog.settings_dialog import *
 
 class MyApp(wx.App):
     def OnInit(self):
-        frame = SettingsDialog(lambda: None, lambda x: None, "Hi", 'test')
+        frame = SettingsDialog()
         if frame.ShowModal() == wx.ID_OK:
             print("Should generate bom")
         frame.Destroy()

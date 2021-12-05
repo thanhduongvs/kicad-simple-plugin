@@ -47,12 +47,7 @@ class SettingsDialogPanel(dialog_base.SettingsDialogPanel):
     def OnExit(self, event):
         self.GetParent().EndModal(wx.ID_CANCEL)
 
-    #def OnSaveSettings(self, event):
-        #self.config_save_func(self)
-        #self.GetParent().EndModal(wx.ID_OK)
-        #event.Skipp()
-
-    def OnGenerateBom(self, event):
+    def OnSaveSettings(self, event):
         self.GetParent().EndModal(wx.ID_OK)
 
 
@@ -62,4 +57,8 @@ class GeneralSettingsPanel(dialog_base.GeneralSettingsPanelBase):
     def __init__(self, parent):
         dialog_base.GeneralSettingsPanelBase.__init__(self, parent)
         #self.file_name_format_hint = file_name_format_hint
+    
+    def OnShowClick(self, event):
+        txt = self.textInput.GetValue()
+        self.labelStatus.LabelText = txt
 
